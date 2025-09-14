@@ -1,0 +1,48 @@
+/* Features Section Styles */
+.features { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 2rem; 
+  padding: 3rem 2rem; 
+}
+
+.feature-card { 
+  background: var(--background-dark); 
+  box-shadow: var(--shadow-card); 
+  padding: 2rem; 
+  border: 1px solid var(--border-color); 
+  max-width: 320px; 
+  flex: 1 1 300px;
+  border-radius: 1.5rem; 
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast); 
+  text-decoration: none; 
+  font-weight: 700;
+  text-align: left; 
+  animation: none !important; 
+}
+
+.feature-card:hover { 
+  transform: translateY(-8px) scale(1.03); 
+  box-shadow: var(--shadow-hover); 
+}
+
+.feature-card h2 { 
+  font-size: 1.5rem; 
+  color: var(--color-blue); 
+  margin-bottom: 1rem; 
+}
+
+/* Responsive features styles */
+@media (max-width: 900px) {
+  .features { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0.3rem; 
+    padding: 0.3rem; 
+  }
+  
+  .feature-card { 
+    margin-bottom: 0.3rem; 
+  }
+}

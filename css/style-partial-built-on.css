@@ -1,0 +1,102 @@
+/* Built On Section Styles */
+.built-on {
+  background: var(--gradient-primary);
+  padding: 3rem 2rem;
+  margin: 3rem 0;
+  border-radius: 0;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.built-on h2 { 
+  text-align: center; 
+  font-size: 2rem; 
+  color: var(--color-blue); 
+  margin-bottom: 2rem; 
+}
+
+.built-on-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.built-on-card {
+  background: var(--background-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  max-width: 320px;
+  flex: 1 1 300px;
+  text-align: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: var(--shadow-card);
+}
+
+.built-on-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+.built-on-logo {
+  margin-bottom: 1.5rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.built-on-logo img {
+  max-height: 80px;
+  max-width: 120px;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0,188,212,0.3));
+  transition: transform var(--transition-fast);
+}
+
+.built-on-card:hover .built-on-logo img {
+  transform: scale(1.1);
+}
+
+.built-on-card h3 {
+  font-size: 1.5rem;
+  color: var(--color-blue);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.built-on-card .short-desc {
+  font-size: 1.1rem;
+  color: var(--color-green-secondary);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.built-on-card .details {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.built-on-card .details p {
+  margin: 0;
+}
+
+/* Responsive adjustments for built-on section */
+@media (max-width: 900px) {
+  .built-on-features {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .built-on {
+    margin: 2rem 0;
+    padding: 2rem 1rem;
+  }
+}

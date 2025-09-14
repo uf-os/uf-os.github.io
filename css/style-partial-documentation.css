@@ -1,0 +1,237 @@
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+  .image-button .button {
+    min-width: 160px;
+  }
+  .image-button .button {
+    min-width: 220px;
+  }
+/* Documentation partial styles (extracted from analytics styles) */
+.documentation {
+  background: transparent; /* use wrapper background */
+  padding: 2rem 2rem 0 2rem; /* reduced top padding to tighten gap */
+  margin: 0; /* remove outer vertical gap so adjacent sections are flush */
+  border-radius: 0;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.documentation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-blue), transparent);
+}
+
+/* removed bottom purple separator to avoid line between adjacent grey sections */
+
+.documentation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #2c2c2c;
+  position: relative;
+}
+
+.documentation-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 1rem auto 0 auto; /* reduced top margin */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  position: relative; /* ensure absolute children position relative to card */
+}
+
+.documentation-card:last-child { margin-bottom: 0; }
+
+.documentation-card .card-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.documentation-card .image-container {
+  flex: 1;
+  text-align: center;
+  max-width: 250px;
+}
+
+.documentation-card .image-container img {
+  width: 200px;
+  height: 200px;
+  filter: drop-shadow(0 4px 12px rgba(0,188,212,0.3));
+}
+
+/* Documentation emoji stack: large document with smaller UFO centered on top */
+.doc-emoji-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doc-emoji {
+  font-size: 6rem; /* large document */
+  line-height: 1;
+  transform: translateY(0);
+}
+.doc-emoji-ufo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size: 3.2rem; /* slightly smaller UFO */
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .doc-emoji-wrap { width: 140px; height: 140px; }
+  .doc-emoji { font-size: 4.5rem; }
+  .doc-emoji-ufo { font-size: 2.4rem; }
+}
+
+.documentation-card .content-container {
+  flex: 2;
+}
+
+.documentation-card .title,
+.contrib-text .title {
+  color: var(--color-blue);
+  font-size: 2.25rem; /* increased 1.5x from 1.5rem */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.doc-lead {
+  color: #333;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.doc-quick-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.doc-quick-links li a {
+  display: inline-block;
+  padding: 0.35rem 0.6rem;
+  background: #f5f7f8;
+  border: 1px solid rgba(0,0,0,0.04);
+  color: #0b3a2f;
+  border-radius: 0.35rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.doc-quick-links li a:hover,
+.doc-quick-links li a:focus {
+  background: #e9efee;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* remove underline on anchor wrapping the emoji (decorative) */
+.documentation-card .image-container a,
+.documentation-card .image-container a:visited,
+.contrib-image a,
+.contrib-image a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.documentation-card p {
+  color: #2c2c2c;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.documentation-card .button-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.doc-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f0f0f0; /* light grey circle */
+  color: #000; /* black glyph */
+  font-size: 18px;
+}
+
+/* Scoped Read Docs button styling to match global .button */
+.documentation-card .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #e6e6e6; /* flat light grey */
+  color: #111; /* dark text for contrast */
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+
+.documentation-card .button:hover,
+.documentation-card .button:focus {
+  background: #dddddd; /* subtle darker grey on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.documentation-card .button .button_label {
+  text-align: left;
+}
+
+/* Higher specificity for Read Docs button to avoid being overridden */
+.documentation-card .button.scroll.has-icon.button_left.button_full_width.button_size_2 {
+  background: #e6e6e6 !important; /* enforce flat grey */
+  color: #111 !important; /* enforce dark text */
+  padding: 0.75rem 1rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+.documentation-card .button.scroll.has-icon.button_left.button_full_width.button_size_2 .doc-icon {
+  margin-left: 0;
+}
+
+@media (max-width: 900px) {
+  .documentation-card .card-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .documentation-card .button-row {
+    flex-direction: column;
+  }
+  /* scale titles down on smaller screens but keep them larger than before */
+  .documentation-card .title,
+  .contrib-text .title {
+    font-size: 1.6rem;
+  }
+}
+
+/* doc-mascot removed */

@@ -1,0 +1,154 @@
+.screenshots {
+  padding: 2rem 1.5rem 0.5rem 1.5rem; /* top/right/bottom/left - slightly reduce bottom space */
+}
+.screenshots h2 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+.screenshot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem; /* tighten gaps between rows */
+  margin: 0.5rem 0; /* smaller vertical spacing */
+}
+.screenshot-row .image {
+  flex: 0 0 30%;
+  max-width: 360px;
+}
+.screenshot-row .screenshot-caption {
+  flex: 1 1 68%;
+  color: #fff;
+  font-size: 1.1rem;
+  background: rgba(0,0,0,0.65);
+  padding: 1.75rem 1.75rem; /* increased padding for taller look */
+  min-height: 140px; /* ensure captions are taller */
+  display: flex;
+  align-items: center; /* vertically center caption text */
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+.screenshot img { 
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+}
+/* Facing controls: when an image should visually face the caption, we can flip it horizontally
+  .screenshot-facing-left  -> image faces right (default)
+  .screenshot-facing-right -> image faces left (flip)
+*/
+.screenshot-facing-left img { transform: none; }
+.screenshot-facing-right img { transform: scaleX(-1); }
+.screenshot-facing-right img { /* ensure transform origin is center for consistent flip */ transform-origin: center; }
+.row-left { flex-direction: row; }
+.row-right { flex-direction: row; }
+
+/* Explicit order rules to ensure visual placement regardless of DOM order or other styles */
+.screenshot-row[data-facing="right"] .image { order: 2; }
+.screenshot-row[data-facing="right"] .screenshot-caption { order: 1; }
+.screenshot-row[data-facing="left"] .image { order: 1; }
+.screenshot-row[data-facing="left"] .screenshot-caption { order: 2; }
+
+.screenshot-caption p { margin: 0; display: flex; align-items: center; }
+.screenshot-number { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  width: 56px; 
+  height: 56px; 
+  line-height: 56px; 
+  text-align: center; 
+  font-size: 1.35rem; 
+  font-weight: 700;
+  background: #fff; 
+  color: #000; 
+  border-radius: 10px; 
+  margin-right: 1rem; 
+}
+
+.screenshot-caption p span + * { /* ensure text sits nicely */
+  display: inline-block;
+}
+
+/* Lightbox styles */
+.screenshots-lightbox { display: none; position: fixed; inset: 0; z-index: 1200; }
+.screenshots-lightbox[aria-hidden="false"] { display: block; }
+.screenshots-lightbox .lightbox-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.85); z-index:1000; }
+.screenshots-lightbox .lightbox-top { position:fixed; left:0; right:0; top:0; display:flex; justify-content:space-between; align-items:center; padding:1rem; pointer-events:auto; z-index:1100; }
+.screenshots-lightbox .lightbox-nav { pointer-events:auto; }
+.screenshots-lightbox button { pointer-events:auto; background:transparent; border:2px solid var(--color-green); color:var(--color-green); padding:0.6rem 0.9rem; border-radius:8px; font-size:1.35rem; font-weight:700; }
+.screenshots-lightbox button:hover, .screenshots-lightbox button:focus { background:rgba(57,255,20,0.08); color:#fff; border-color:var(--color-green); box-shadow:0 8px 24px rgba(57,255,20,0.08); outline:none; }
+.screenshots-lightbox .lightbox-close { background:transparent; }
+.screenshots-lightbox .lightbox-inner { position:fixed; inset:6% 6% 6% 6%; display:flex; align-items:center; justify-content:center; z-index:1050; }
+.screenshots-lightbox .lightbox-image { max-width:100%; max-height:100%; border-radius:8px; box-shadow:0 18px 60px rgba(0,0,0,0.8); }
+
+@media (max-width: 900px) {
+  .screenshots-lightbox .lightbox-top { padding:0.5rem; }
+  .screenshots-lightbox button { font-size:1.1rem; padding:0.6rem 0.9rem; }
+  .screenshots-lightbox button { background:rgba(255,255,255,0.18); }
+}
+
+@media (max-width: 900px) {
+  .screenshot-row { flex-direction: column; }
+  .screenshot-row .image, .screenshot-row .screenshot-caption { flex: 1 1 100%; }
+  .screenshot-caption { text-align: left; }
+  /* Ensure image appears above the caption on narrow screens */
+  .screenshot-row .image { order: 1 !important; }
+  .screenshot-row .screenshot-caption { order: 2 !important; }
+  /* Force override for data-facing specific rules */
+  .screenshot-row[data-facing="right"] .image { order: 1 !important; }
+  .screenshot-row[data-facing="right"] .screenshot-caption { order: 2 !important; }
+  .screenshot-row[data-facing="left"] .image { order: 1 !important; }
+  .screenshot-row[data-facing="left"] .screenshot-caption { order: 2 !important; }
+}
+
+/* Accessibility: when an image is flipped visually, ensure screen-readers still read it naturally — do not change DOM order */
+
+/* View-more button styling */
+.screenshots-viewmore-wrap { display:flex; justify-content:center; margin-top: 0.35rem; }
+.screenshots-viewmore { border:2px solid var(--color-green); background:transparent; color:var(--color-green); padding:0.5rem 1rem; border-radius:10px; font-weight:700; font-size:0.95rem; cursor:pointer; }
+.screenshots-viewmore:hover, .screenshots-viewmore:focus { background: rgba(57,255,20,0.06); color: #fff; box-shadow:0 10px 30px rgba(57,255,20,0.06); outline:none; }
+
+@media (min-width: 901px) {
+  /* nudge the button so it visually sits over the bottom-middle of the screenshots block on wide viewports */
+  .screenshots-viewmore-wrap { margin-top: 1.25rem; }
+  .screenshots-viewmore { transform: translateY(-6%); }
+}
+
+/* normalize button appearance across browsers so our styles show */
+.screenshots-viewmore {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+/* Forceful application in case other global button rules override our styles */
+button.screenshots-viewmore, .screenshots .screenshots-viewmore, .screenshots-viewmore {
+  border: 2px solid var(--Color-green, var(--color-green)) !important;
+  background: transparent !important;
+  color: var(--color-green) !important;
+  padding: 0.6rem 1.25rem !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+button.screenshots-viewmore:hover, button.screenshots-viewmore:focus, .screenshots-viewmore:hover, .screenshots-viewmore:focus {
+  background: rgba(57,255,20,0.06) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 30px rgba(57,255,20,0.06) !important;
+}

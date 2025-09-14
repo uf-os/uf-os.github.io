@@ -1,0 +1,69 @@
+/* Hero Section Styles */
+.hero { 
+  position: relative; z-index: 2; margin-bottom: 2rem; text-align: center; 
+  padding: 5rem 2rem 3rem; background: var(--gradient-hero); 
+  box-shadow: 0 4px 32px rgba(0,0,0,0.2); 
+}
+
+.hero::after { 
+  content: ""; position: absolute; left: 50%; top: 100%; 
+  transform: translateX(-50%); width: 80vw; height: 120px; 
+  background: radial-gradient(circle, var(--color-blue) 0%, transparent 70%); 
+  opacity: 0.18; z-index: 1; 
+}
+
+.hero h1 { 
+  font-size: 3rem; 
+  font-weight: 900; 
+  margin-bottom: 1rem; 
+  letter-spacing: 0.05em; 
+}
+
+.ufos-title { 
+  display: inline-block; 
+  font-weight: 900; 
+  border-radius: 1rem; 
+  color: #fff; 
+  text-decoration: none; 
+  font-size: 3.5rem; letter-spacing: 0.08em; margin-bottom: 0.5rem; 
+  background: #111; padding: 0.4rem 1.2rem; box-shadow: var(--shadow-hero); 
+  -webkit-text-stroke: 0.5px rgba(0,0,0,0.35); 
+  text-shadow: 0 6px 28px rgba(57,255,20,0.06), 0 1px 0 rgba(0,0,0,0.6); 
+}
+
+.tagline { 
+  font-size: 1.5rem; 
+  margin-bottom: 2rem; 
+  color: var(--color-light); 
+}
+
+.main-logo { 
+  position: relative; 
+  overflow: visible; 
+  margin: 0.6rem auto 0; 
+}
+
+.main-logo img { 
+  display: block; width: 100%; height: auto; 
+  animation: bob-logo 7s ease-in-out infinite; 
+  filter: drop-shadow(0 12px 32px #00bcd4cc) drop-shadow(0 0 32px #512da8cc); 
+  margin-top: 0.25rem; 
+}
+
+/* Also apply the bobbing animation when the image itself carries the .main-logo class
+   (some templates put the class directly on the <img> element). */
+.main-logo { 
+  animation: bob-logo 7s ease-in-out infinite; 
+}
+
+@keyframes bob-logo { 
+  0%, 100% { transform: translateY(0); } 
+  50% { transform: translateY(16px); } /* move down then back up */
+}
+
+/* Responsive hero styles */
+@media (max-width: 900px) {
+  .hero { 
+    padding: 0.7rem; 
+  }
+}

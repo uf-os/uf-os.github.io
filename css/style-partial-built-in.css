@@ -1,0 +1,92 @@
+/* Built-in section: green band with bento cards */
+.built-in {
+  /* use same green band as community */
+  background: linear-gradient(90deg, #1bb934 0%, #14c96a 100%);
+  padding: 2rem 0;
+  color: #04220a; /* dark text for contrast */
+  border-radius: 0.5rem;
+}
+.built-in-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.built-in h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 2rem;
+}
+.built-in-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* halve vertical gap between rows while keeping horizontal gap the same */
+  /* use px units so the bento-grid measurement script can parse them */
+  row-gap: 4px;
+  column-gap: 4px;
+  /* Use a small fixed base row height to make vertical gaps consistent and
+    allow deterministic span calculations in JS. */
+  /* increase base row height to reduce rounding errors and overlaps */
+  grid-auto-rows: 12px;
+  /* ensure items are anchored to the start of each row to avoid stretch/overlap */
+  align-items: start;
+  grid-auto-flow: dense;
+}
+.built-in-card {
+  background: #0e1114; /* much darker card background */
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  color: #fff;
+  /* Use block layout so card height is determined by content. Keep flex where needed
+     for internal alignment but don't force full-column stretching. */
+  display: block;
+  /* make box-sizing explicit so JS size measurements match layout (includes padding/border) */
+  box-sizing: border-box;
+}
+.built-in-card .card-title { font-size: 1.25rem; margin: 0 0 0.5rem 0; color: #fff; }
+.built-in-card .card-desc { color: rgba(255,255,255,0.92); margin-bottom: 0.5rem; }
+.built-in-card .card-details { font-size: 0.9rem; color: rgba(255,255,255,0.82); }
+
+/* High-specificity overrides to prevent other theme CSS from breaking card styles */
+.built-in .built-in-card {
+  background: #0e1114 !important;
+  color: #fff !important;
+  border-radius: 0.75rem !important;
+  padding: 1rem !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18) !important;
+}
+.built-in .built-in-card .card-title,
+.built-in .built-in-card .card-desc,
+.built-in .built-in-card .card-details {
+  color: inherit !important;
+}
+
+.built-in-card {
+  text-decoration: none;
+}
+.built-in-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+}
+
+/* Repo link (small, actual clickable link on top) */
+.built-in-card .repo-link {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.9);
+  text-decoration: underline;
+  margin-top: 0.25rem;
+}
+
+/* Project name (bigger, stylable) */
+.built-in-card .project-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+  color: #ffffff;
+}
+
+/* Slightly green-grey details */
+.built-in-card .card-details,
+.built-in-card .card-desc { color: rgba(196, 230, 208, 0.85); }
+
+@media (max-width: 900px) {
+  .built-in-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,131 @@
+/* Navbar Styles */
+.ufos-navbar { 
+  position: fixed; top: 0; left: 0; width: 100%; 
+  background: var(--background-glass); 
+  backdrop-filter: blur(6px) saturate(120%); 
+  -webkit-backdrop-filter: blur(6px) saturate(120%); 
+  z-index: 100; 
+  transition: background var(--transition-slow), box-shadow var(--transition-slow), backdrop-filter var(--transition-slow); 
+}
+
+.ufos-navbar.scrolled { 
+  background: #0b0b0b; 
+  box-shadow: 0 6px 30px rgba(0,0,0,0.45); 
+  backdrop-filter: blur(8px); 
+  border-bottom: 1px solid var(--border-color); 
+}
+
+.ufos-navbar::before { 
+  content: ""; position: absolute; inset: 0; pointer-events: none; 
+  box-shadow: none; opacity: 0; visibility: hidden; 
+  transform: translateY(-6px) scale(0.994); 
+  transition: var(--transition-complex); z-index: 0; 
+}
+
+.ufos-navbar.scrolled::before { 
+  visibility: visible; opacity: 1; 
+  transform: translateY(0) scale(1); 
+  box-shadow: var(--shadow-hero); 
+  transition-delay: 0s; 
+}
+
+.navbar-content { 
+  display: flex; align-items: center; 
+  max-width: 1200px; margin: 0 auto; 
+  padding: 0.6rem 2rem; position: relative; 
+  min-height: 64px; z-index: 1; 
+}
+
+.navbar-logo { 
+  font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; letter-spacing: 0.08em; 
+  background: rgba(0,0,0,0.95); padding: 0.35rem 0.95rem; border-radius: 0.85rem; 
+  border: 1px solid rgba(255,255,255,0.03); text-shadow: 0 6px 30px rgba(57,255,20,0.06); 
+}
+
+.ufos-navbar.scrolled .navbar-logo { 
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08), 0 0 8px 4px var(--color-green), 0 0 18px 6px var(--color-green-secondary); 
+}
+
+.navbar-link { 
+  margin-left: 2rem; color: #fff; text-decoration: none; font-weight: 600; font-size: 1.1rem; 
+  transition: color var(--transition-fast); background: var(--color-green); 
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; 
+  text-shadow: 0 6px 30px rgba(57,255,20,0.04); 
+}
+
+.navbar-link:hover { 
+  color: #ffffff !important; 
+  -webkit-text-fill-color: initial; 
+  text-decoration: underline; 
+}
+
+.ufos-navbar:not(.scrolled) .navbar-link, 
+.ufos-navbar:not(.scrolled) .navbar-logo { 
+  color: rgba(255,255,255,0.95); 
+  text-shadow: 0 6px 30px rgba(0,0,0,0.35); 
+}
+
+.navbar-download { 
+  margin-left: auto; padding: 0.6rem 1.8rem; background: #2a2a2a; color: #ddd; 
+  font-size: 1rem; font-weight: 800; border-radius: 1.6rem; text-decoration: none; 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.35); 
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform var(--transition-fast); 
+  z-index: 101; display: inline-flex; align-items: center; justify-content: center; 
+}
+
+.ufos-navbar.scrolled .navbar-download { 
+  background: linear-gradient(90deg, var(--color-green) 0%, var(--color-green-secondary) 100%); 
+  color: #06120a; 
+  box-shadow: 0 6px 24px rgba(57,255,20,0.12); 
+  transform: translateY(-1px); 
+}
+
+.hero-download { 
+  position: absolute; top: 2.2rem; right: 2.5rem; 
+  padding: 0.7rem 2.2rem; background: #222; color: #bbb; 
+  font-size: 1.15rem; border-radius: 2rem; 
+  box-shadow: 0 2px 12px rgba(0,255,128,0.08); 
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, opacity 0.3s; 
+  z-index: 10; 
+  display: inline-block; 
+  font-weight: 900; 
+  text-decoration: none; 
+  color: #fff; 
+}
+
+body.navbar-active .hero-download { 
+  opacity: 0; 
+  pointer-events: none; 
+}
+
+/* Responsive navbar styles */
+@media (max-width: 700px) {
+  .navbar-download { 
+    padding: 0.5rem; 
+    width: 44px; 
+    height: 44px; 
+    border-radius: 999px; 
+    font-size: 0; 
+    justify-content: center; 
+  }
+  
+  .navbar-download::before { 
+    content: "\2B07"; 
+    font-size: 20px; 
+    color: #fff; 
+    display: inline-block; 
+    line-height: 1; 
+  }
+  
+  .navbar-download span { 
+    position: absolute !important; 
+    width: 1px !important; 
+    height: 1px !important; 
+    padding: 0 !important; 
+    margin: -1px !important; 
+    overflow: hidden !important; 
+    clip: rect(0,0,0,0) !important; 
+    white-space: nowrap !important; 
+    border: 0 !important; 
+  }
+}

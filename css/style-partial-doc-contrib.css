@@ -1,0 +1,39 @@
+/* Shared background for documentation + contribute */
+.doc-contrib-wrapper {
+  background: #f5f5f5;
+  padding: 2rem 0; /* overall padding for the band */
+}
+
+.doc-contrib-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Override any leftover pseudo-element separators inside the wrapper.
+   This neutralizes ::before/::after rules (gradients or lines) coming from
+   other partials or generated CSS so the band appears continuous. */
+.doc-contrib-wrapper .documentation::before,
+.doc-contrib-wrapper .documentation::after,
+.doc-contrib-wrapper .contribute::before,
+.doc-contrib-wrapper .contribute::after,
+.doc-contrib-wrapper .analytics::before,
+.doc-contrib-wrapper .analytics::after {
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+  height: 0 !important;
+  content: none !important;
+}
+
+/* Fallback: remove any tiny border/line backgrounds inside the wrapper */
+.doc-contrib-wrapper *::before,
+.doc-contrib-wrapper *::after {
+  background-image: none !important;
+  background: none !important;
+}
+
+/* Add vertical spacing between the documentation and contribute sections inside the band */
+.doc-contrib-inner > .documentation + .contribute {
+  margin-top: 2rem; /* adjust as needed for desired gap */
+}

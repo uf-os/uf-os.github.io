@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.142.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UF-OS</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/fontawesome.min.css" integrity="sha512-J2Gce+WmOttffHOrVKLTlzxIalPXUMDbSfn5ADqp8Vj9EngnjNHr+jjiL3ZB8muEzo+K51gU10X+0eGqGNL7QA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/solid.min.css" integrity="sha512-SRwBRtvmT+LZLST1GBrRec8GROqtjKU1NK23RKSpdL6IRzn2xPeOfBYSeIlc/9iXYagKB5IX6MyKZF1nq4a1fw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/brands.min.css" integrity="sha512-mXqwRsOznG7CS37KA7CLR1Fc72gfOgp7r8xaVdBKoBKhitcKI/mK+IamtZUf+FAkufXOvVTESu9lPsoQc+kFxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  
+<nav id="ufos-navbar" class="ufos-navbar">
+  <div class="navbar-content">
+    <a href="/" class="navbar-logo">UF-OS</a>
+    <a href="/news/" class="navbar-link">News/</a>
+    <a href="/docs/" class="navbar-link">Docs/</a>
+    <a href="/download/" class="navbar-download">Download</a>
+  </div>
+</nav>
+
+<div class="gradient-bg">
+  <section class="hero">
+  <img src="/images/logo.webp" alt="UF-OS Logo" class="main-logo" style="max-width:220px;margin-bottom:2rem;" />
+  <h1 class="hero-title"><span class="ufos-title">UF-OS</span><br>Godot-Focused Bootc Image / Distro</h1>
+  <p class="tagline">Built on the Fedora-Atomic & UBlue-OS stack. We're hoping to provide a full "desktop environment" x "developer experience" for Godot with the help of Hyprland.</p>
+</section>
+
+</div>
+<section class="features">
+  <div class="feature-card">
+    <h2>Velit Praesent</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et ligula in nunc bibendum commodo a vitae urna.</p>
+  </div>
+  <div class="feature-card">
+    <h2>Curabitur Blandit</h2>
+    <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Pellentesque habitant morbi tristique senectus et netus.</p>
+  </div>
+  <div class="feature-card">
+    <h2>Nullam Sollicitudin</h2>
+    <p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet.</p>
+  </div>
+  <div class="feature-card">
+    <h2>Maecenas Lacinia</h2>
+    <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+  </div>
+</section>
+
+<section class="screenshots">
+  <h2>Screenshots</h2>
+
+  <div class="screenshot-row row-left" data-facing="left">
+    <div class="screenshot image screenshot-facing-left">
+  <img class="lb-trigger" data-index="0" src="/images/screenshots/screenshot-left-1.svg" alt="Screenshot 1" />
+    </div>
+    <div class="screenshot-caption">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+    </div>
+  </div>
+
+  <div class="screenshot-row row-right" data-facing="right">
+    <div class="screenshot-caption">
+      <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor.</p>
+    </div>
+  <div class="screenshot image">
+  <img class="lb-trigger" data-index="1" src="/images/screenshots/screenshot-right.svg" alt="Screenshot 2" />
+    </div>
+  </div>
+
+  <div class="screenshot-row row-left" data-facing="left">
+    <div class="screenshot image screenshot-facing-left">
+  <img class="lb-trigger" data-index="2" src="/images/screenshots/screenshot-left-2.svg" alt="Screenshot 3" />
+    </div>
+    <div class="screenshot-caption">
+      <p>Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+    </div>
+  </div>
+
+</section>
+
+
+<div id="screenshots-lightbox" class="screenshots-lightbox" aria-hidden="true">
+  <div class="lightbox-top">
+    <div class="lightbox-nav">
+      <button class="lightbox-prev" aria-label="Previous">&lt;</button>
+      <button class="lightbox-next" aria-label="Next">&gt;</button>
+    </div>
+    <button class="lightbox-close" aria-label="Close">✕</button>
+  </div>
+  <div class="lightbox-backdrop"></div>
+  <div class="lightbox-inner" role="dialog" aria-modal="true">
+    <img class="lightbox-image" src="" alt="" />
+  </div>
+</div>
+
+<script src="/js/screenshots-lightbox.js" defer></script>
+
+
+<div class="screenshots-viewmore-wrap">
+  <button class="screenshots-viewmore" aria-label="View more screenshots">View more</button>
+</div>
+
+<section class="built-on">
+  <h2>Built On</h2>
+  <div class="built-on-features">
+    <div class="built-on-card">
+      <div class="built-on-logo">
+        <img src="/images/godot-logo.svg" alt="Godot Engine Logo" />
+      </div>
+      <h3>Godot Engine</h3>
+      <p class="short-desc">Free & open source 2D and 3D game engine</p>
+      <div class="details">
+        <p>The powerful, feature-rich game engine that powers UF-OS's development tools and capabilities. With built-in scripting, visual editor, and cross-platform deployment, Godot provides the foundation for modern game development workflows.</p>
+      </div>
+    </div>
+    <div class="built-on-card">
+      <div class="built-on-logo">
+        <img src="/images/ublue-logo.svg" alt="Universal Blue Logo" />
+      </div>
+      <h3>Universal Blue</h3>
+      <p class="short-desc">Cloud-native operating system images</p>
+      <div class="details">
+        <p>Built on Fedora Atomic and container technology, UBlue provides reliable, image-based operating systems with atomic updates and rollbacks. This foundation ensures UF-OS stays secure, stable, and always up-to-date.</p>
+      </div>
+    </div>
+    <div class="built-on-card">
+      <div class="built-on-logo">
+        <img src="/images/hyprland-logo.svg" alt="Hyprland Logo" />
+      </div>
+      <h3>Hyprland</h3>
+      <p class="short-desc">Dynamic tiling Wayland compositor</p>
+      <div class="details">
+        <p>A highly customizable and visually stunning Wayland compositor featuring dynamic tiling, smooth animations, and extensive configuration options. Hyprland provides the modern desktop experience that adapts to your workflow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="built-in">
+  
+  <div class="built-in-inner">
+    <h2>Built In</h2>
+    <div class="built-in-grid">
+      
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/uf" target="_blank" rel="noopener noreferrer">uf-os/uf</a>
+  <div class="project-name">UF</div>
+        <p class="card-desc">Tool To Manage UF-OS & Friends.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/uf-os" target="_blank" rel="noopener noreferrer">uf-os/uf-os</a>
+  <div class="project-name">UF-OS</div>
+        <p class="card-desc">Everything (☝️🤓 Erm, Space) Shipped Together.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/ufdot" target="_blank" rel="noopener noreferrer">uf-os/ufdot</a>
+  <div class="project-name">UFDot</div>
+        <p class="card-desc">(Pronounced U-F-DOUGH) Is A Soft-Fork Of Godot Aimed At Helping Add Things Of Interest -- Upstreaming As-Much As Possible.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/stasys" target="_blank" rel="noopener noreferrer">uf-os/stasys</a>
+  <div class="project-name">Stasys</div>
+        <p class="card-desc">STASYS Is The Perpetual Waiting / Holder Of Godot. A Distro Based Around Godot.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/strats" target="_blank" rel="noopener noreferrer">uf-os/strats</a>
+  <div class="project-name">Strats</div>
+        <p class="card-desc">Misc Tools For Stasys; Separate Repo To Test Things Build Extensively Before Updated In-Image.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/cryo" target="_blank" rel="noopener noreferrer">uf-os/cryo</a>
+  <div class="project-name">Cryo</div>
+        <p class="card-desc">CRYO'S, Is Misc Parts Of The Underlying Operating System For STASYS; The Installer, Recovery Tool, Other Misc Utils, Etc.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/podbay" target="_blank" rel="noopener noreferrer">uf-os/podbay</a>
+  <div class="project-name">Podbay</div>
+        <p class="card-desc">"Open The Podbay Doors, Gal (Godot); A Podman Manager For Breech Styled Podman Containers.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/breech" target="_blank" rel="noopener noreferrer">uf-os/breech</a>
+  <div class="project-name">Breech</div>
+        <p class="card-desc">Container'(ment) Breach! Run A Fair Bit Of Stasys' On A Non-Bootable Container System.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/mother" target="_blank" rel="noopener noreferrer">uf-os/mother</a>
+  <div class="project-name">Mother</div>
+        <p class="card-desc">Tool To Make Shipping To UF-OS Super Easy / Modular.</p>
+        <div class="card-details">
+          <p>...</p>
+        </div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/spock" target="_blank" rel="noopener noreferrer">uf-os/spock</a>
+  <div class="project-name">Spock</div>
+        <p class="card-desc">🖖 Sprock (Script) Is A Superset Of Godot Adding Notably AST Macros, A JIT Compiler, And Native Static Binaries That Opttionally Supports Calling LibGodot.</p>
+        <div class="card-details"></div>
+      </div>
+
+      <div class="built-in-card">
+        <a class="repo-link" href="https://github.com/uf-os/ketbash" target="_blank" rel="noopener noreferrer">uf-os/ketbash</a>
+  <div class="project-name">Ketbash</div>
+        <p class="card-desc">Extended Library, Utils, Etc For Sprock (Script).</p>
+        <div class="card-details"></div>
+      </div>
+
+  <div class="built-in-card">
+    <a class="repo-link" href="https://github.com/uf-os/gundwm" target="_blank" rel="noopener noreferrer">uf-os/gundwm</a>
+  <div class="project-name">Gundwm</div>
+    <p class="card-desc">Opinionated Hyprland-Config For Stasys Focused Primarily On Godot.</p>
+    <div class="card-details"></div>
+  </div>
+
+  <div class="built-in-card">
+    <a class="repo-link" href="https://github.com/uf-os/nanodots" target="_blank" rel="noopener noreferrer">uf-os/nanodots</a>
+  <div class="project-name">Nanodots</div>
+    <p class="card-desc">Little Programs In Godot; To Make Gundwm A Bit (/Byte) More Liveable.</p>
+    <div class="card-details"></div>
+  </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="/js/bento-grid.js" defer></script>
+
+<section class="doc-contrib-wrapper">
+  <div class="doc-contrib-inner">
+    <section class="documentation">
+  <div class="documentation-container">
+    <div class="community-card documentation-card animate fadeInUp">
+      <div class="card-content">
+      <div class="image-container">
+              <a href="https://docs.uf-os.org/" target="_blank" title="View Documentation">
+                <div class="doc-emoji-wrap" aria-hidden="true">
+                  <div class="doc-emoji">📄</div>
+                  <div class="doc-emoji-ufo" aria-hidden="true">🛸</div>
+                </div>
+              </a>
+              <div class="image-button">
+                <a class="button scroll has-icon button_left button_full_width button_size_2" href="https://docs.uf-os.org/" target="_blank" aria-label="Open documentation in a new tab">
+                  <span class="button_icon doc-icon" aria-hidden="true">📚</span>
+                  <span class="button_label">Read Docs</span>
+                </a>
+              </div>
+            </div>
+        <div class="content-container">
+          <h5 class="title">Documentation</h5>
+          <p class="doc-lead">Find concise, example-driven guides for installing and using UF-OS. Topics include platform setup, Godot project templates, compositor config, package management, and troubleshooting steps.</p>
+          <ul class="doc-quick-links" aria-label="Documentation quick links">
+            <li><a href="https://docs.uf-os.org/getting-started/" target="_blank">Getting started guide</a></li>
+            <li><a href="https://docs.uf-os.org/guides/godot/" target="_blank">Godot integration</a></li>
+            <li><a href="https://docs.uf-os.org/guides/hyprland/" target="_blank">Hyprland tips</a></li>
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+<section class="faq-section">
+  <div class="faq-card">
+    <div class="faq-inner">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="true">Q: Vorare semper atque lumen?</button>
+          <div class="faq-answer" style="display: block;">A: Novus lorem: vorare semper atque lumen, cursus vitae primis in faucibus. Velit aptent tempor, etiam arcu sem vivamus—nibh habitant luctus.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Q: Nimis flumine condimentum?</button>
+          <div class="faq-answer" style="display: none;">A: Lacinia novum: nimis flumine condimentum, porttitor sapien arcu, sed euismod ante. Pellentesque taciti ligula, curabitur sed.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Q: Fusce solum strenua?</button>
+          <div class="faq-answer" style="display: none;">A: Candelae fusce: solum strenua, ad arcu motus; id vestibulum neque—aliquam aenean, morbi cursus dolor sit.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+
+const faqQuestions = document.querySelectorAll('.faq-question');
+faqQuestions.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer = btn.nextElementSibling;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    answer.style.display = expanded ? 'none' : 'block';
+  });
+});
+</script>
+<style>
+.faq-section { margin: 2rem 0; }
+.faq-card {
+  background: #fff;
+  border-radius: 0;  
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  padding: 2rem;
+  width: 100vw;  
+  box-sizing: border-box;
+  margin: 2rem 0 0 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border: 1px solid rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+.faq-card h2 {
+  color: #14532d;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.faq-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.faq-list { width: 100%; margin: 0 auto; }
+.faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+.faq-question {
+  background: #f7f7f9;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  text-align: left;
+  color: #2c2c2c;
+  border-radius: 0;  
+  transition: background 0.2s;
+}
+.faq-question[aria-expanded="true"] {
+  background: #ececf1;
+}
+.faq-answer {
+  padding: 0.5rem 0 1rem 1rem;
+  color: #444;
+  font-size: 1rem;
+}
+</style>
+
+  </div>
+</section>
+
+<section class="community">
+  <h2>Join the UF-OS Community</h2>
+  <p>Support the project or get involved — every contribution helps.</p>
+  <div class="community-actions">
+    <a href="/discourse/" class="community-link" title="Discourse"><i class="fa-solid fa-comments" aria-hidden="true"></i> Discourse</a>
+    <a href="/discord/" class="community-link" title="Discord"><i class="fa-brands fa-discord" aria-hidden="true"></i> Discord</a>
+    <a href="https://www.reddit.com/r/uf_os" class="community-link" title="Reddit" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-reddit-alien" aria-hidden="true"></i> Reddit</a>
+    <a href="https://github.com/sponsors/uf-os" class="community-link sponsor" title="Sponsor" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-heart"></i> Sponsors</a>
+  </div>
+</section>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var navbar = document.getElementById('ufos-navbar');
+  var hero = document.querySelector('.hero');
+  function checkScroll() {
+    if (!navbar || !hero) return;
+    var heroBottom = hero.getBoundingClientRect().bottom;
+    if (heroBottom < 0) {
+      navbar.classList.add('scrolled');
+      document.body.classList.add('navbar-active');
+    } else {
+      navbar.classList.remove('scrolled');
+      document.body.classList.remove('navbar-active');
+    }
+  }
+  window.addEventListener('scroll', checkScroll);
+  checkScroll();
+});
+</script>
+  <footer class="ufos-footer">
+  <div class="ufos-footer-inner">
+    <div class="footer-left">
+      <strong>UF-OS</strong>
+  <span class="muted">&nbsp;&copy; 2025 <a class="footer-author" data-hover="@megalisp - Making Big Things In LISP" aria-label="Joshua Steven Grant (Jost Grant)" href="https://github.com/megalisp" target="_blank" rel="noopener noreferrer"><span class="orig">Joshua Steven Grant (Jost Grant)</span></a></span>
+    </div>
+    <div class="footer-right footer-icons">
+  <a class="footer-icon" href="https://github.com/uf-os" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span class="sr-only">UF-OS GitHub</span></a>
+  <a class="footer-icon" href="https://www.youtube.com/@uf-os" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube" aria-hidden="true"></i><span class="sr-only">UF-OS YouTube</span></a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

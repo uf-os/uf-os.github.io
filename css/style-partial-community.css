@@ -1,0 +1,52 @@
+/* Community Section Styles */
+.community { 
+  text-align: center; 
+  padding: 3rem 2rem; 
+  background: linear-gradient(90deg, #1bb934 0%, #14c96a 100%); /* green */
+  color: #04220a; /* dark text for contrast */
+  border-radius: 0;
+}
+
+.community-link { 
+  display: inline-block; 
+  border: none; 
+  border-radius: 2rem; 
+  color: #fff; 
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  margin: 0.5rem 1rem; 
+  padding: 0.75rem 2rem; 
+  background: rgba(4,34,10,0.9); /* dark button on green */
+  letter-spacing: 0.03em; 
+  box-shadow: 0 2px 8px rgba(81,45,168,0.2); 
+  text-decoration: none; 
+  font-weight: 700;
+}
+
+.community-link:hover { 
+  transform: scale(1.05); 
+  background: var(--gradient-primary); 
+}
+
+.community .sponsor { 
+  background: #fff; 
+  color: #0a7f3b; 
+  border: 2px solid rgba(4,34,10,0.06);
+}
+
+.community .sponsor:hover { 
+  background: #f7fff9; 
+}
+
+.community-actions { 
+  margin-top: 1rem;
+}
+
+/* Icons inside community links */
+.community-link i {
+  margin-right: 0.6rem;
+  vertical-align: middle;
+}
+
+.community-link .fa-heart { 
+  color: #e0245e; /* accent for the filled heart inside white sponsor button */
+}

@@ -1,0 +1,119 @@
+/* Footer Section Styles */
+.ufos-footer { 
+  background: #000; 
+  color: var(--color-green); 
+  padding: 2rem 1rem; 
+  border-top: 1px solid rgba(255,255,255,0.03); 
+  position: relative; 
+}
+
+.ufos-footer::before { 
+  content: ""; position: absolute; left: 0; right: 0; top: -40px; height: 56px; 
+  pointer-events: none; 
+  background: linear-gradient(to bottom, rgba(57,255,20,0.28) 0%, rgba(57,255,20,0.14) 30%, rgba(57,255,20,0.06) 60%, transparent 100%); 
+  filter: blur(12px); z-index: 2; 
+}
+
+.ufos-footer-inner { 
+  max-width: 1200px; margin: 0 auto; 
+  display: flex; align-items: center; justify-content: space-between; 
+  gap: 1rem; position: relative; z-index: 1; 
+}
+
+.ufos-footer .muted { 
+  color: rgba(57,255,20,0.55); 
+  margin: 0 0 0 0; 
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.ufos-footer a { 
+  color: #fff; 
+  text-decoration: none; 
+  margin-left: 1rem; 
+  font-weight: 700; 
+}
+
+.ufos-footer a:hover { 
+  color: var(--color-green); 
+}
+
+/* Icon buttons in footer */
+.footer-icons { display: flex; gap: 0.75rem; align-items: center; }
+.footer-icon { 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 44px; 
+  height: 44px; 
+  border-radius: 50%; 
+  background: #0b3a2f; /* dark green */
+  color: #fff; 
+  text-decoration: none; 
+  box-shadow: 0 4px 10px rgba(11,58,47,0.18);
+}
+.footer-icon i { font-size: 18px; }
+.footer-icon:hover, .footer-icon:focus { 
+  background: var(--gradient-primary); 
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(11,58,47,0.22);
+}
+.footer-icon:focus { outline: 3px solid rgba(11,58,47,0.18); outline-offset: 2px; }
+/* Keep icon glyphs white over gradient */
+.footer-icon:hover, .footer-icon:focus, .footer-icon:hover i, .footer-icon:focus i {
+  color: #fff !important;
+}
+
+/* Footer author hover: don't change to green; underline and replace displayed text */
+.footer-left .footer-author { color: rgba(57,255,20,0.55); text-decoration: none; position: relative; }
+.footer-left .footer-author:hover, .footer-left .footer-author:focus { color: inherit; text-decoration: underline; }
+.footer-left .footer-author::after {
+  content: attr(data-hover);
+  display: none;
+  position: static;
+  margin-left: 0.25rem;
+  color: rgba(255,255,255,0.95);
+  font-weight: 600;
+}
+/* On hover/focus, hide original name and show replacement text */
+.footer-left .footer-author:hover .orig, .footer-left .footer-author:focus .orig { display: none !important; }
+.footer-left .footer-author:hover::after, .footer-left .footer-author:focus::after { display: inline-block; }
+
+/* Accessible visually-hidden helper for screen readers */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Screen-reader only helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Responsive footer styles */
+@media (max-width: 800px) {
+  .ufos-footer-inner { 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+  }
+  
+  .ufos-footer .footer-right { 
+    margin-top: 1rem; 
+  }
+}

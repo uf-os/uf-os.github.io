@@ -1,0 +1,90 @@
+/* Load partial-specific styles first */
+@import url('style-partial-navbar.css');
+@import url('style-partial-hero.css');
+@import url('style-partial-features.css');
+@import url('style-partial-community.css');
+@import url('style-partial-built-on.css');
+@import url('style-partial-built-in.css');
+@import url('style-partial-screenshots.css');
+@import url('style-partial-doc-contrib.css');
+@import url('style-partial-documentation.css');
+@import url('style-partial-contribute.css');
+@import url('style-partial-footer.css');
+
+
+
+/* CSS Custom Properties */
+:root {
+  --color-green: #39ff14; 
+  --color-green-secondary: #00ff99; 
+  --color-blue: #00bcd4; 
+  --color-purple: #512da8; 
+  --color-dark: #1a237e; 
+  --color-light: #e1bee7;
+  
+  --background-dark: rgba(33,33,33,0.85); 
+  --background-glass: rgba(11,11,11,0.18); 
+  --border-color: rgba(255,255,255,0.08);
+  
+  --shadow-hero: 0 2px 12px rgba(0,0,0,0.18), 0 0 24px 8px var(--color-green), 0 0 48px 16px var(--color-green-secondary);
+  --shadow-card: 0 2px 16px rgba(81,45,168,0.2); 
+  --shadow-hover: 0 8px 32px rgba(0,188,212,0.25);
+  
+  --transition-fast: 0.2s ease; 
+  --transition-slow: 0.35s ease; 
+  --transition-complex: opacity 340ms ease, transform 340ms cubic-bezier(.2,.9,.2,1), box-shadow 340ms ease, visibility 0s linear 340ms;
+  
+  --gradient-primary: linear-gradient(90deg, var(--color-blue) 0%, var(--color-purple) 100%); 
+  --gradient-secondary: linear-gradient(90deg, var(--color-purple) 0%, var(--color-blue) 100%);
+  --gradient-hero: linear-gradient(120deg, var(--color-purple) 0%, var(--color-blue) 100%); 
+  --gradient-hardware: linear-gradient(120deg, var(--color-dark) 0%, var(--color-blue) 100%);
+}
+
+/* Universal base styles */
+body { 
+  margin: 0; 
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif; 
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-purple) 100%); 
+  color: #fff; 
+}
+
+/* Accessible visually-hidden helper for screen readers (global) */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Shared component patterns */
+.cta {
+  display: inline-block; 
+  border: none; 
+  border-radius: 2rem; 
+  color: #fff; 
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  padding: 1rem 2.5rem; 
+  font-size: 1.25rem; 
+  letter-spacing: 0.05em; 
+  font-weight: 800; 
+  background: var(--gradient-primary); 
+  box-shadow: 0 2px 16px rgba(0,188,212,0.2); 
+  text-decoration: none; 
+}
+
+.cta:hover { 
+  background: var(--gradient-secondary); 
+  transform: scale(1.05); 
+}
+
+/* Global responsive adjustments */
+@media (max-width: 900px) {
+  section { 
+    margin-bottom: 0.7rem; 
+  }
+}
