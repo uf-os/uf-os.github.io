@@ -131,15 +131,45 @@
         <p>Built on Fedora Atomic and container technology, UBlue provides reliable, image-based operating systems with atomic updates and rollbacks. This foundation ensures UF-OS stays secure, stable, and always up-to-date.</p>
       </div>
     </div>
-    <div class="built-on-card">
-      <div class="built-on-logo">
+    <div class="built-on-card" id="hyprland-card" style="position:relative;">
+      <div class="built-on-logo" id="hyprland-logo">
         <img src="/images/hyprland-logo.svg" alt="Hyprland Logo" />
       </div>
-      <h3>Hyprland</h3>
-      <p class="short-desc">Dynamic tiling Wayland compositor</p>
-      <div class="details">
-        <p>A highly customizable and visually stunning Wayland compositor featuring dynamic tiling, smooth animations, and extensive configuration options. Hyprland provides the modern desktop experience that adapts to your workflow.</p>
+      <div id="flip-icon" style="position:absolute;top:12px;right:12px;cursor:pointer;width:28px;height:28px;display:flex;align-items:center;justify-content:center;background:#eaffea;border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,0.08);z-index:2;font-size:1.5rem;color:#388e3c;" title="Flip to KDE">
+        &#x21C4;
       </div>
+      <div id="hyprland-front">
+        <h3>Hyprland</h3>
+        <p class="short-desc">Dynamic tiling Wayland compositor</p>
+        <div class="details">
+          <p>A highly customizable and visually stunning Wayland compositor featuring dynamic tiling, smooth animations, and extensive configuration options. Hyprland provides the modern desktop experience that adapts to your workflow.</p>
+        </div>
+  <div style="margin-top:1.2rem;text-align:right;color:#888;font-size:0.98rem;">(re: Stasys)</div>
+      </div>
+      <div id="hyprland-back" style="display:none;">
+        <div class="built-on-logo">
+          <img src="/images/kde-logo.svg" alt="KDE Logo" />
+        </div>
+        <h3>KDE Plasma</h3>
+        <p class="short-desc">Feature-rich desktop environment</p>
+        <div class="details">
+          <p>KDE Plasma offers a highly configurable, visually appealing desktop environment with powerful tools, widgets, and a vibrant community. It’s ideal for users who want a classic desktop experience with modern features.</p>
+        </div>
+  <div style="margin-top:1.2rem;text-align:right;color:#888;font-size:0.98rem;">(re: StatOS)</div>
+      </div>
+      <script>
+        const flipIcon = document.getElementById('flip-icon');
+        const front = document.getElementById('hyprland-front');
+        const back = document.getElementById('hyprland-back');
+        const hyprlandLogo = document.getElementById('hyprland-logo');
+        let flipped = false;
+        flipIcon.onclick = function() {
+          flipped = !flipped;
+          front.style.display = flipped ? 'none' : '';
+          back.style.display = flipped ? '' : 'none';
+          hyprlandLogo.style.display = flipped ? 'none' : '';
+        };
+      </script>
     </div>
   </div>
 </section>
@@ -371,6 +401,123 @@ faqQuestions.forEach(btn => {
 }
 </style>
 
+  </div>
+</section>
+
+<section class="grab-ufos" style="background: #b6ffb6; padding: 2rem 0;">
+  <h2 style="text-align:center; margin-bottom: 1.5rem; color: #222;">Grab UF-OS!</h2>
+  <div style="text-align:center; max-width:600px; margin:0 auto 2rem auto; color:#222; font-size:1.15rem;">
+  UF-OS is currently distributed as two spins: StatOS and Stasys. Each offers a unique experience tailored to different needs and philosophies.
+  </div>
+  <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom:2.5rem;">
+    <div class="grab-card" style="background: linear-gradient(to bottom, #000 0 160px, #fff 160px 100%); border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 2rem; max-width: 350px; flex: 1 1 300px; color: #222;">
+        <img src="/images/banner-statos.webp" alt="StatOS Banner" style="width:100%;border-radius:0.5rem 0.5rem 0 0;object-fit:cover;margin-bottom:1rem;" />
+        <p style="color: #222;"><strong>Status Quo:</strong> A Bazzite Superset catered to Gamedev. Ships Godot, Blender, and friends. Also ships an optional Hyprland session.</p>
+        <ul>
+          <li>Based on Bazzite</li>
+          <li>Includes Godot, Blender, and more</li>
+          <li>Optional Hyprland session</li>
+          <li>Best for game developers</li>
+        </ul>
+  <a href="#" class="grab-link" id="get-statos" style="color: #388e3c; font-weight: bold;">Get StatOS</a>
+      </div>
+    <div class="grab-card" style="background: linear-gradient(to bottom, #000 0 160px, #fff 160px 100%); border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 2rem; max-width: 350px; flex: 1 1 300px; color: #222; position: relative;">
+      <span id="flip-icon" title="Flip to KDE" style="position:absolute;top:1rem;right:1rem;cursor:pointer;font-size:1.5rem;user-select:none;">&#x21bb;</span>
+      <div id="hyprland-content">
+        <img src="/images/banner-stasys.webp" alt="Stasys Banner" style="width:100%;border-radius:0.5rem 0.5rem 0 0;object-fit:cover;margin-bottom:1rem;" />
+        <p style="color: #222;"><strong>Idealistic:</strong> Ships a specialized Hyprland config and a much more minimalistic image.</p>
+        <ul>
+          <li>Specialized Hyprland config</li>
+          <li>Minimalistic image</li>
+          <li>Less pragmatic, more idealistic</li>
+          <li>Best for minimalists & tinkerers</li>
+        </ul>
+        <a href="#" class="grab-link" id="get-stasys" style="color: #388e3c; font-weight: bold;">Get Stasys</a>
+      </div>
+      <div id="kde-content" style="display:none;">
+        <img src="/images/banner-stasys.webp" alt="KDE Banner" style="width:100%;border-radius:0.5rem 0.5rem 0 0;object-fit:cover;margin-bottom:1rem;filter:grayscale(1);" />
+        <p style="color: #222;"><strong>KDE Edition:</strong> Ships with a full KDE Plasma desktop experience, ideal for users who prefer a traditional desktop environment.</p>
+        <ul>
+          <li>Full KDE Plasma desktop</li>
+          <li>Highly customizable</li>
+          <li>Best for users who want a classic desktop workflow</li>
+        </ul>
+        <a href="#" class="grab-link" id="get-stasys" style="color: #388e3c; font-weight: bold;">Get Stasys</a>
+      </div>
+      <script>
+        const flipIcon = document.getElementById('flip-icon');
+        const hyprlandContent = document.getElementById('hyprland-content');
+        const kdeContent = document.getElementById('kde-content');
+        let showingKDE = false;
+        flipIcon.onclick = function() {
+          showingKDE = !showingKDE;
+          hyprlandContent.style.display = showingKDE ? 'none' : '';
+          kdeContent.style.display = showingKDE ? '' : 'none';
+          flipIcon.title = showingKDE ? 'Flip to Hyprland' : 'Flip to KDE';
+        };
+      </script>
+      </div>
+  </div>
+    </div>
+
+  
+  <div style="margin-top:2.5rem;">
+    <div style="background: #eaffea; border: 1px solid #b6ffb6; color: #227a22; border-radius: 0.7rem; padding: 0.75rem 1.5rem; max-width: 900px; margin: 0 auto 1.5rem auto; font-size: 1.08rem; text-align: center; font-weight: 500;">
+      <span>Notice: We currently don't ship an ISO and require an existing Fedora Atomic image installed on your system.</span>
+    </div>
+  <div class="grab-card" style="background: #fff; border-radius: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 2.5rem; width: 90%; max-width: 1200px; min-width: 280px; color: #222; text-align:left; margin: 0 auto; overflow-x:auto;">
+  <h3 id="setup-title" style="margin-top:0;">How to Set Up Fedora Atomic Desktop For UF-OS/StatOS</h3>
+      <ol style="font-size:1.15rem;">
+        <li style="margin-bottom:1.2rem;">
+          <strong>Download an official Fedora Atomic Desktop ISO:</strong><br>
+          <span style="font-size:0.95rem;color:#555;">Flash the ISO to a USB drive and install Fedora as usual.</span><br>
+          <span style="font-size:1rem;color:#388e3c;font-weight:600;">We recommend installing with Kinoite, but any Fedora Atomic Desktop will work.</span>
+        </li>
+        <li style="margin-bottom:1.2rem;">
+          <strong>Rebase to the unsigned variant of the Universal Blue base image:</strong><br>
+          Open a terminal and run:<br>
+          <pre id="unsigned-cmd" style="background:#f5f5f5;padding:0.75rem;border-radius:0.5rem;overflow-x:auto;white-space:pre;">rpm-ostree rebase ostree-unverified-registry:ghcr.io/uf-os/statos:latest</pre>
+          <span style="font-size:0.95rem;color:#555;">Replace <code id="unsigned-img">uf-os/statos</code> with your chosen image if different.</span><br>
+          Then reboot:<br>
+          <pre style="background:#f5f5f5;padding:0.75rem;border-radius:0.5rem;white-space:pre-wrap;word-break:break-word;">systemctl reboot</pre>
+        </li>
+        <li style="margin-bottom:1.2rem;">
+          <strong>Rebase to the signed variant of the image:</strong><br>
+          After rebooting, run:<br>
+          <pre id="signed-cmd" style="background:#f5f5f5;padding:0.75rem;border-radius:0.5rem;overflow-x:auto;white-space:pre;">rpm-ostree rebase ostree-image-signed:docker://ghcr.io/uf-os/statos:latest</pre>
+          <span style="font-size:0.95rem;color:#555;">Again, replace <code id="signed-img">uf-os/statos</code> with your chosen image if needed.</span><br>
+          Then reboot again:<br>
+          <pre style="background:#f5f5f5;padding:0.75rem;border-radius:0.5rem;white-space:pre-wrap;word-break:break-word;">systemctl reboot</pre>
+        </li>
+      </ol>
+      <div style="margin-top:1.5rem; font-size:0.95rem; color:#222; text-align:right;">
+  <em>Source: <a href="https://universal-blue.discourse.group/t/how-to-install-universal-blues-base-images/868" target="_blank" style="color:#388e3c;">Universal Blue: How to Install Base Images</a></em>
+      </div>
+      <script>
+        function updateInstructions(image) {
+          document.getElementById('unsigned-cmd').textContent = `rpm-ostree rebase ostree-unverified-registry:ghcr.io/${image}:latest`;
+          document.getElementById('unsigned-img').textContent = image;
+          document.getElementById('signed-cmd').textContent = `rpm-ostree rebase ostree-image-signed:docker://ghcr.io/${image}:latest`;
+          document.getElementById('signed-img').textContent = image;
+          var title = document.getElementById('setup-title');
+          if (image === 'uf-os/statos') {
+            title.textContent = 'How to Set Up Fedora Atomic Desktop For UF-OS/StatOS';
+          } else if (image === 'uf-os/stasys') {
+            title.textContent = 'How to Set Up Fedora Atomic Desktop For UF-OS/Stasys';
+          } else {
+            title.textContent = 'How to Set Up Fedora Atomic Desktop';
+          }
+        }
+        document.getElementById('get-statos').onclick = function(e) {
+          e.preventDefault();
+          updateInstructions('uf-os/statos');
+        };
+        document.getElementById('get-stasys').onclick = function(e) {
+          e.preventDefault();
+          updateInstructions('uf-os/stasys');
+        };
+      </script>
+    </div>
   </div>
 </section>
 

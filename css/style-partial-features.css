@@ -8,7 +8,7 @@
 }
 
 .feature-card { 
-  background: var(--background-dark); 
+  background: #000;
   box-shadow: var(--shadow-card); 
   padding: 2rem; 
   border: 1px solid var(--border-color); 
